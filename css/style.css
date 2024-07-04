@@ -188,3 +188,41 @@ body {
     font-weight: bold;
 }
 
+/* MEDIA QUERIES */
+
+@media (max-width: 700px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    .menu, .grid-section, .copy {
+        grid-column: 1;
+    }
+
+    .menu {
+        margin-top: 0;
+    }
+
+    .copy {
+        margin-bottom: 0;
+    }
+
+    .grid-section {
+        grid-template-columns: 100px 1fr;
+        gap: 10px;
+    }
+
+    .grid-section h1 {
+        font-size: 3rem;
+    }
+
+    .animais-lista {
+        grid-column: 1;
+    }
+
+    .faq-lista, .mapa, .dados {
+        grid-column: 1/3;
+    }
+
+    
+}
