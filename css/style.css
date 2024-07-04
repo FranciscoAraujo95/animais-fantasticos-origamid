@@ -97,3 +97,27 @@ body {
     margin-bottom: 1rem;
 }
 
+.animais-lista {
+    height: 370px;
+    overflow-y: scroll;
+    grid-column: 2;
+}
+
+.animais-lista::-webkit-scrollbar {
+    width: 18px;
+} 
+
+.animais-lista::-webkit-scrollbar-thumb {
+    background: var(--cor-destaque);
+    border-left: 4px solid var(--cor-background);
+    border-right: 4px solid var(--cor-background);
+}
+
+.animais-lista::-webkit-scrollbar-track {
+    background: var(--cor-background);
+}
+
+.animais-descricao {
+    grid-column: 3;
+}
+
