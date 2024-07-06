@@ -26,6 +26,7 @@ function initTabNav() {
 }
 initTabNav();
 
+// ACCORDION LIST ANIMATION
 function initAccordionList() {
   const accordionList = document.querySelectorAll(".js-accordion dt");
   const activeClass = "ativo";
@@ -44,3 +45,30 @@ function initAccordionList() {
   }
 }
 initAccordionList();
+
+function initScrollSuave() {
+  //SMOOTH SCROLL INTO VIEW
+  const linksInternos = document.querySelectorAll(".js-menu a[href^='#']");
+
+  function scrollToSection(event) {
+    event.preventDefault();
+    const href = event.currentTarget.getAttribute("href");
+    const section = document.querySelector(href);
+
+    section.scrollIntoView({
+      behavior: "smooth",
+    });
+
+    //Forma alternativa
+    // const topo = section.offsetTop;
+    // window.scrollTo({
+    //   top: topo,
+    //   behavior: "smooth",
+    // });
+  }
+
+  linksInternos.forEach((link) => {
+    link.addEventListener("click", scrollToSection);
+  });
+}
+initScrollSuave();
