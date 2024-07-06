@@ -72,3 +72,26 @@ function initScrollSuave() {
   });
 }
 initScrollSuave();
+
+function initAnimacaoScroll() {
+  //Animação ao scroll
+  const sections = document.querySelectorAll(".js-scroll");
+  if (sections.length) {
+    const windowMetade = window.innerHeight * 0.7;
+    sections[0].classList.add("ativo");
+
+    function animarAoScroll() {
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const isSectionVisible = sectionTop - windowMetade < 0;
+        if (isSectionVisible) {
+          section.classList.add("ativo");
+        }
+        //Caso queira reiniciar a animação quando o usuário voltar pra parte de cima do seite, pode ser criado um else removendo a classe ativo das sections
+      });
+    }
+
+    window.addEventListener("scroll", animarAoScroll);
+  }
+}
+initAnimacaoScroll();
